@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem flameThrower;
     public struct Destination {
         public bool isValid;
         public Vector3 location;
@@ -31,25 +32,50 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Move") > 0)
+        if(Input.GetAxis("Move") > 0 || Input.GetButton("AttackMove"))
         {
-            Destination newLocation =  GetClickedLocation();        
-            if(newLocation.isValid)
-            {
-                currentDestination = newLocation;
-            }
+            UpdatePlayerDestination();
         }
-        else
+
+        if(currentDestination.isValid)
         {
-            if(currentDestination.isValid)
-            {
-                float distance = Vector3.Distance(currentDestination.location, transform.position);
-                Debug.Log(distance);
-                if(distance < 1.5)
-                {
-                    currentDestination = Destination.Invalid;
-                }
-            }
+            StopMovementIfWithinTreshold();
+            UpdatePlayerFacing();
+        }
+
+
+        if(Input.GetButtonDown("AttackMove"))
+        {
+            flameThrower.Play();
+        }
+        else if(Input.GetButtonUp("AttackMove"))
+        {
+            flameThrower.Stop();
+        }
+    }
+
+    private void UpdatePlayerFacing()
+    {
+
+        transform.LookAt(currentDestination.location, Vector3.up);
+    }
+
+    private void UpdatePlayerDestination()
+    {
+        Destination newLocation = GetClickedLocation();
+        newLocation.location.y = transform.position.y;
+        if (newLocation.isValid)
+        {
+            currentDestination = newLocation;
+        }
+    }
+
+    private void StopMovementIfWithinTreshold()
+    {
+        float distance = Vector3.Distance(currentDestination.location, transform.position);
+        if (distance < 1.0)
+        {
+            currentDestination = Destination.Invalid;
         }
     }
 
