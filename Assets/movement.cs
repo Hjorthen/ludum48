@@ -7,6 +7,7 @@ public class movement : MonoBehaviour
     public ParticleSystem bullet;
     public ParticleSystem flamethrower;
     private float bulletCooldown;
+    public Transform playerPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * 0.01f;
+        playerPosition.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * 0.01f;
 
         if(Input.GetKey(KeyCode.B))
         {
