@@ -8,17 +8,11 @@ public class DamageVisualizer : MonoBehaviour
     public Color damageColor;
     public Animator animator;
     private float currentHealth;
-    private Color baseColor;
-    private MeshRenderer mesh;
-    private int flicker = 0;
-    private bool colorSwitch = false;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = health.health;
-        mesh = GetComponent<MeshRenderer>();
-        baseColor = GetComponent<MeshRenderer>().material.color;
         animator = GetComponent<Animator>();
     }
 
@@ -30,49 +24,14 @@ public class DamageVisualizer : MonoBehaviour
     void LateUpdate()
     {
 
-
-
-
-
         if (currentHealth > health.health)
         {
-            //animator.Play()
-            flicker = 500;
+            animator.SetBool("isDamaged", true);
+        } else
+        {
+            animator.SetBool("isDamaged", false);
         }
 
-        /*
-        if (flicker % 100 == 0 && flicker > 0)
-        {
-            mesh.material.color = damageColor;
-            if (!colorSwitch)
-            {
-                colorSwitch = true;
-            }
-            else
-            {
-                colorSwitch = false;
-
-            }
-        }
-
-        if (!colorSwitch)
-        {
-            mesh.material.color = baseColor;
-        }
-        else
-        {
-            mesh.material.color = damageColor;
-        }
-
-        if (flicker > 0)
-        {
-            flicker--;
-        }
-        else
-        {
-            mesh.material.color = baseColor;
-        }
-        */
         currentHealth = health.health;
     }
 }
