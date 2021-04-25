@@ -2913,7 +2913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899961212980460813, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.56
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899961212980460813, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4899961212980460813, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2978,6 +2982,14 @@ PrefabInstance:
     - target: {fileID: 4899961213092399132, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175825207584588824, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
+      propertyPath: TriggerModule.enter
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175825207584588824, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4899961213092399110, guid: 5eec408013aa85b4b85d8326501e61e3, type: 3}
