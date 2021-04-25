@@ -5,7 +5,6 @@ using UnityEngine;
 public class DamageVisualizer : MonoBehaviour
 {
     public Health health;
-    public Color damageColor;
     public Animator animator;
     private float currentHealth;
 

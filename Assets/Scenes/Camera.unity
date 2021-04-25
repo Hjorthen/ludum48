@@ -2754,6 +2754,8 @@ GameObject:
   - component: {fileID: 1105716760}
   - component: {fileID: 1105716759}
   - component: {fileID: 1105716765}
+  - component: {fileID: 1105716767}
+  - component: {fileID: 1105716766}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -2879,6 +2881,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e5366f1361cce4c99311dc5b10070f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1105716766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105716758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10aa6386b5b8dc84eb8c35b6207c7561, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1105716767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105716758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281aaf326029f814684f656f7ecafae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 1105716759}
+  damageColor: {r: 0, g: 0, b: 0, a: 0}
+  animator: {fileID: 1105716766}
 --- !u!1 &1734004491
 GameObject:
   m_ObjectHideFlags: 0
