@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     public static float score;
     public GameObject player;
     private static int enemiesKilled;
+    private float playerMaxDepth;
 
     private void Start()
     {
@@ -16,7 +17,8 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        score = player.transform.position.x + (enemiesKilled * 10);
+        playerMaxDepth = Mathf.Max(player.transform.position.x, playerMaxDepth);
+        score = Mathf.FloorToInt(playerMaxDepth + (enemiesKilled * 10));
     }
     public static void IncrementKills()
     {
