@@ -12,13 +12,13 @@ public class DamageArea : MonoBehaviour
         dealDamageNextPhysicsUpdate += amount;
     }
 
-    void OnFixedUpdate()
+    void FixedUpdate()
     {
         dealDamageAmount = dealDamageNextPhysicsUpdate;
         dealDamageNextPhysicsUpdate = 0;
     }
 
-    void OnCollisionStay(Collision other)
+    void OnTriggerStay(Collider other)
     {
         var health = other.gameObject.GetComponent<Health>();
         if(health != null)

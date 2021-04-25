@@ -11,6 +11,7 @@ public class HolyHandGrenade : MonoBehaviour
     public float Damage;
     private bool destroyOnFinished;
     private new Collider collider;
+    private bool dealDamageNextFrame;
 
     void Start()
     {
@@ -18,6 +19,12 @@ public class HolyHandGrenade : MonoBehaviour
     }
     public void Update()
     {
+        if(dealDamageNextFrame)
+        {
+            Area.DealDamage(Damage);
+            dealDamageNextFrame = false;
+        }
+
         if(destroyOnFinished)
         {
             bool shouldDestroy = true;
@@ -44,7 +51,7 @@ public class HolyHandGrenade : MonoBehaviour
         {
             item.Play();   
         }
-        Area.DealDamage(Damage);
+        dealDamageNextFrame = true;
         collider.enabled = false;
         destroyOnFinished = true;
     }
