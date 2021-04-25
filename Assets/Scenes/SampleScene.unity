@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2693,6 +2693,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scorescreen Object
       objectReference: {fileID: 0}
+    - target: {fileID: 6869487387334544994, guid: 0f3a168af3c2c3c4eaecef3b9c16c62d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869487387334544994, guid: 0f3a168af3c2c3c4eaecef3b9c16c62d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 6869487387334544994, guid: 0f3a168af3c2c3c4eaecef3b9c16c62d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.764151
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f3a168af3c2c3c4eaecef3b9c16c62d, type: 3}
 --- !u!1 &1698643891 stripped
@@ -2865,7 +2877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574495655f6448d4eadfd9fddf3b036e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTrees: 0
+  SpawnTrees: 1
   SpawnEnemies: 0
   Terrain: {fileID: 488440832}
   Player: {fileID: 209513774}
@@ -3061,6 +3073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score
       objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126475, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_TagString
+      value: Score
+      objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: player
       value: 
@@ -3071,59 +3087,75 @@ PrefabInstance:
       objectReference: {fileID: 705507994}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.ctime1
-      value: 13493
+      value: 23708
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.ctime2
-      value: 29491
+      value: 39321
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.ctime3
-      value: 46838
+      value: 53006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.ctime4
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key0.b
-      value: 0
+      value: 0.8392157
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key0.g
-      value: 0.96657693
+      value: 0.95686275
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key1.b
-      value: 0
+      value: 0.2971698
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key1.g
-      value: 0.5588885
+      value: 0.9047925
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
-      propertyPath: MoodGradient.key2.b
+      propertyPath: MoodGradient.key1.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key2.b
+      value: 0.43596473
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key2.g
-      value: 0.7426257
+      value: 0.5943341
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key2.r
-      value: 0
+      value: 0.9150943
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key3.b
-      value: 0.38679248
+      value: 0.6698113
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key3.g
-      value: 0
+      value: 0.49644846
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.key3.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key4.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key4.r
       value: 0.06669704
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: MoodGradient.m_NumColorKeys
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
       propertyPath: m_RootOrder

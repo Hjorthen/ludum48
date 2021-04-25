@@ -24,6 +24,7 @@ public class Score : MonoBehaviour
     {
         float ratio = Mathf.Clamp(playerMaxDepth / 100, 0, 1);
         DirectionalLight.color = MoodGradient.Evaluate(ratio);
+        Camera.main.backgroundColor = MoodGradient.Evaluate(ratio);
     }
 
     private void Update()
