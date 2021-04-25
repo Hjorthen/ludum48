@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public ParticleSystem flameThrower;
     private MovementController movementController;
+    public GameObject holyHandgrenadePrefab;
 
 
     void Start()
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            DeployTheMightyHandgrenade();
+        }
         if(Input.GetAxis("Move") > 0)
         {
             UpdatePlayerDestination();
@@ -35,6 +40,17 @@ public class PlayerController : MonoBehaviour
         UpdatePlayerFacing();
     }
 
+    private void DeployTheMightyHandgrenade()
+    {
+        if(GetCursorWorldLocation(out Vector3 location))
+        {
+            location.y = transform.position.y;
+            Vector3 direction = (location - transform.position).normalized;
+            var theNade = GameObject.Instantiate(holyHandgrenadePrefab, transform.position, Quaternion.identity);
+            var rigidBody = theNade.GetComponent<Rigidbody>();
+            rigidBody.AddForce(direction * 10, ForceMode.VelocityChange);
+        }
+    }
 
     private void UpdatePlayerFacing()
     {

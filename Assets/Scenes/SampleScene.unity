@@ -254,6 +254,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3898755322792944171, guid: 9e7d1a92c3b738447aac371b15765019, type: 3}
   m_PrefabInstance: {fileID: 1674991072}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &209513775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209513774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80999760f99e29942972b6067c3706c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1 &488440832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3898755322792944182, guid: 9e7d1a92c3b738447aac371b15765019, type: 3}
+      propertyPath: holyHandgrenadePrefab
+      value: 
+      objectReference: {fileID: 5423317694539538994, guid: b58fcaee9cb76fe46b52cfb2fd5f11d6, type: 3}
     - target: {fileID: 6593798103464457442, guid: 9e7d1a92c3b738447aac371b15765019, type: 3}
       propertyPath: m_Name
       value: PlayerPosition
@@ -2587,8 +2604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574495655f6448d4eadfd9fddf3b036e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTrees: 0
-  SpawnEnemies: 0
+  SpawnTrees: 1
+  SpawnEnemies: 1
   Terrain: {fileID: 488440832}
   Player: {fileID: 209513774}
   TreePrefab: {fileID: 3630557401015445148, guid: 5f158ae35d645e7488781af235829eb3, type: 3}
@@ -2614,7 +2631,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16354
+  m_Name: pb_Mesh23750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
