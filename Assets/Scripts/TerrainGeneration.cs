@@ -92,7 +92,12 @@ public class TerrainGeneration : MonoBehaviour
 
     bool ShouldSpawnNextChunk()
     {
-       return Player.transform.position.x + 5 * 20 > NextTile * 20; 
+        if (Player != null)
+        {
+            return Player.transform.position.x + 5 * 20 > NextTile * 20;
+        }
+
+        return false;
     }
 
     void Update()

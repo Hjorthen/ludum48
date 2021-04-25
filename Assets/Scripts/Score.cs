@@ -17,8 +17,11 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        playerMaxDepth = Mathf.Max(player.transform.position.x, playerMaxDepth);
-        score = Mathf.FloorToInt(playerMaxDepth + (enemiesKilled * 10));
+        if (player != null)
+        {
+            playerMaxDepth = Mathf.Max(player.transform.position.x, playerMaxDepth);
+            score = Mathf.FloorToInt(playerMaxDepth + (enemiesKilled * 10));
+        }
     }
     public static void IncrementKills()
     {
