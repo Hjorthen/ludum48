@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private MovementController movementController;
     public GameObject holyHandgrenadePrefab;
     private float holyHandGrenadeCooldown;
+    public float GrenadeCooldown;
 
 
     void Start()
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
             if (holyHandGrenadeCooldown <= 0)
             {
                 DeployTheMightyHandgrenade();
-                holyHandGrenadeCooldown = 1;
+                holyHandGrenadeCooldown = GrenadeCooldown;
             }
         }
         if(Input.GetAxis("Move") > 0)
