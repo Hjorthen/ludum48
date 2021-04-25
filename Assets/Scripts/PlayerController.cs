@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem flameThrower;
     private MovementController movementController;
     public GameObject holyHandgrenadePrefab;
+    private float holyHandGrenadeCooldown;
 
 
     void Start()
@@ -21,7 +22,11 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyUp(KeyCode.Alpha1))
         {
-            DeployTheMightyHandgrenade();
+            if (holyHandGrenadeCooldown <= 0)
+            {
+                DeployTheMightyHandgrenade();
+                holyHandGrenadeCooldown = 1;
+            }
         }
         if(Input.GetAxis("Move") > 0)
         {
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
         }
 
         UpdatePlayerFacing();
+        holyHandGrenadeCooldown -= Time.deltaTime;
     }
 
     private void DeployTheMightyHandgrenade()

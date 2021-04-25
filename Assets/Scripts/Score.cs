@@ -32,7 +32,7 @@ public class Score : MonoBehaviour
         if (player != null)
         {
             playerMaxDepth = Mathf.Max(player.transform.position.x, playerMaxDepth);
-            score = Mathf.FloorToInt(playerMaxDepth + (enemiesKilled * 10));
+            score = Mathf.FloorToInt(playerMaxDepth) + (enemiesKilled * 10);
         }
         UpdateMoodLight(); 
 
