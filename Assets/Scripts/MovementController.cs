@@ -33,7 +33,6 @@ public class MovementController : MonoBehaviour
     public void SetDestination(Vector3 destination)
     {
         destination.y = movementTarget.position.y;
-        Debug.Log($"Set destination {destination}");
         currentDestination = new Destination{
             isValid = true,
             location = destination
@@ -54,7 +53,6 @@ public class MovementController : MonoBehaviour
         if(currentDestination.isValid)
         {
             MoveTowardsDestination();
-            UpdateFacing();
             StopMovementIfWithinTreshold();
         }
         else
@@ -76,16 +74,10 @@ public class MovementController : MonoBehaviour
         float distance = Vector3.Distance(currentDestination.location, movementTarget.position);
         if (distance < 1.0)
         {
-            Debug.Log("Stopping Movement");
             currentDestination = Destination.Invalid;
         }
     }
 
-    private void UpdateFacing()
-    {
-
-        transform.LookAt(currentDestination.location, Vector3.up);
-    }
 
     public void OnDrawGizmos()
     {
