@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Damage(float damage)
+    public void Damage(float damage)
     {
         health -= damage;
     }
