@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxis("Move") > 0 || Input.GetButton("AttackMove"))
+        if(Input.GetAxis("Move") > 0)
         {
             UpdatePlayerDestination();
         }
@@ -31,21 +31,43 @@ public class PlayerController : MonoBehaviour
         {
             flameThrower.Stop();
         }
+
+        UpdatePlayerFacing();
+    }
+
+
+    private void UpdatePlayerFacing()
+    {
+        if(GetCursorWorldLocation(out Vector3 location))
+        {
+            transform.LookAt(location);
+        }
     }
 
     private void UpdatePlayerDestination()
     {
-        Transform cameraTransform = Camera.main.transform;
-        var clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        var result = Physics.RaycastAll(ray, float.MaxValue, LayerMask.GetMask("Terrain"));
-        if(result.Length > 0)
+        if(GetCursorWorldLocation(out Vector3 destination))
         {
-            movementController.SetDestination(result[0].point);
+            movementController.SetDestination(destination);
         }
         else
         {
             movementController.ClearDestination();
         }
+    }
+
+    private bool GetCursorWorldLocation(out Vector3 location)
+    {
+
+        Transform cameraTransform = Camera.main.transform;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var result = Physics.RaycastAll(ray, float.MaxValue, LayerMask.GetMask("Terrain"));
+        if(result.Length > 0)
+        {
+            location = result[0].point;
+            return true;
+        }
+        location = Vector3.zero;
+        return false;
     }
 }

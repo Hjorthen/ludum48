@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class TerrainGeneration : MonoBehaviour
 {
+    public bool SpawnTrees;
+    public bool SpawnEnemies;
+
     public GameObject Terrain;
     public GameObject Player;
     public GameObject TreePrefab;
+    public GameObject EnemyPrefab;
     public int InitialTiles = 5;
     
     private int NextTile = 0;
@@ -29,14 +33,38 @@ public class TerrainGeneration : MonoBehaviour
         newTile.SetActive(true);
         NextTile++;
         WorldTiles.Enqueue(newTile);
-        SpawnTrees(newTile);
+        if(SpawnTrees)
+            SpawnTreesOnTile(newTile);
+        if(SpawnEnemies)
+            SpawnEnemiesOnTile(newTile);
         if(WorldTiles.Count > 7)
         {
             RemoveChunk(WorldTiles.Dequeue());
         }
     }
 
-    private void SpawnTrees(GameObject tile)
+    private void SpawnEnemiesOnTile(GameObject tile)
+    {
+        Vector3 scale = tile.transform.localScale;
+        Vector3 pos = tile.transform.position;
+        int spawnedEnemies = 0;
+        for (int spawnAttempts = 0; spawnAttempts < 10000; spawnAttempts++)
+        {
+            float x = UnityEngine.Random.Range(0.00f, 1.0f);   
+            float z = UnityEngine.Random.Range(0.25f, 0.75f);
+            Vector3 spawnPosition = new Vector3(x, 0, z);
+            bool locationOccupied = Physics.CheckSphere(spawnPosition, 0.50f, LayerMask.GetMask("Tree"));
+            if(!locationOccupied)
+            {
+                var newEnemy = GameObject.Instantiate(EnemyPrefab, new Vector3(pos.x + scale.x * x, 1.0f, pos.z + scale.z * z), Quaternion.identity);
+                spawnedEnemies++;
+            }
+            if(spawnedEnemies >= 3)
+                break;
+        }
+    }
+
+    private void SpawnTreesOnTile(GameObject tile)
     {
         Vector3 scale = tile.transform.localScale;
         Vector3 pos = tile.transform.position;
