@@ -2865,8 +2865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574495655f6448d4eadfd9fddf3b036e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTrees: 1
-  SpawnEnemies: 1
+  SpawnTrees: 0
+  SpawnEnemies: 0
   Terrain: {fileID: 488440832}
   Player: {fileID: 209513774}
   TreePrefab: {fileID: 3630557401015445148, guid: 5f158ae35d645e7488781af235829eb3, type: 3}
@@ -3050,6 +3050,127 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1991155497
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7713803127015126475, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_Name
+      value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 209513774}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: DirectionalLight
+      value: 
+      objectReference: {fileID: 705507994}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.ctime1
+      value: 13493
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.ctime2
+      value: 29491
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.ctime3
+      value: 46838
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key0.g
+      value: 0.96657693
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key1.g
+      value: 0.5588885
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key2.g
+      value: 0.7426257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key2.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key3.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key3.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.key3.r
+      value: 0.06669704
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126484, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: MoodGradient.m_NumColorKeys
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.748889
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.583994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.885958
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713803127015126485, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5862e8a8d7002664e8ed7b4a1a986edd, type: 3}
 --- !u!1001 &1276115051520620431
 PrefabInstance:
   m_ObjectHideFlags: 0
