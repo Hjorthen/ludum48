@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    private float score = 0;
-    private int enemiesKilled = 0;
+    public static float score;
+    public GameObject player;
+    private static int enemiesKilled;
+
+    private void Start()
+    {
+        score = 0;
+        enemiesKilled = 0;
+    }
 
     private void Update()
     {
-        score = transform.position.x;
+        score = player.transform.position.x + (enemiesKilled * 10);
     }
-    public void IncrementKills()
+    public static void IncrementKills()
     {
         enemiesKilled += 1;
     }
