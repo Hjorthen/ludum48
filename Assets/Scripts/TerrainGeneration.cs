@@ -30,7 +30,7 @@ public class TerrainGeneration : MonoBehaviour
         NextTile++;
         WorldTiles.Enqueue(newTile);
         SpawnTrees(newTile);
-        if(WorldTiles.Count > 6)
+        if(WorldTiles.Count > 7)
         {
             RemoveChunk(WorldTiles.Dequeue());
         }
@@ -48,7 +48,8 @@ public class TerrainGeneration : MonoBehaviour
             float sample = Mathf.PerlinNoise(x / 100, z / 100);
             if(sample > 0.3)
             {
-                GameObject.Instantiate(TreePrefab, new Vector3(pos.x + scale.x * x, 0.0f, pos.z + scale.z * z), Quaternion.identity);
+                var newTree = GameObject.Instantiate(TreePrefab, new Vector3(pos.x + scale.x * x, 0.0f, pos.z + scale.z * z), Quaternion.identity);
+                newTree.transform.SetParent(tile.transform);
                 spawnedTrees++;
             }
             if(spawnedTrees >= 10)
