@@ -2578,7 +2578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593798103464457445, guid: 9e7d1a92c3b738447aac371b15765019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1
+      value: 18.8
       objectReference: {fileID: 0}
     - target: {fileID: 6593798103464457445, guid: 9e7d1a92c3b738447aac371b15765019, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2884,6 +2884,13 @@ MonoBehaviour:
   TreePrefab: {fileID: 3630557401015445148, guid: 5f158ae35d645e7488781af235829eb3, type: 3}
   EnemyPrefab: {fileID: 5960796951555052975, guid: 2311c1f3fc8784d40abf170dd01b0061, type: 3}
   InitialTiles: 5
+  SpawnChunkCount: 3
+  InitialChunkHealthPool: 20
+  ChunkDifficultyScale: 1.1
+  EnemyBaseHealth: 10
+  InitialTreeCount: 1.5
+  TreeScalingFactor: 1.1
+  MaxTreeCount: 20
 --- !u!4 &1850080985
 Transform:
   m_ObjectHideFlags: 0

@@ -13,7 +13,20 @@ public class TerrainGeneration : MonoBehaviour
     public GameObject TreePrefab;
     public GameObject EnemyPrefab;
     public int InitialTiles = 5;
+
+
     
+    [Tooltip("The amount of chunks in the beginning that will not have enemies spawned in them")]
+    public float SpawnChunkCount;
+    public float InitialChunkHealthPool;
+    public float ChunkDifficultyScale;
+    public float EnemyBaseHealth;
+
+
+    public float InitialTreeCount;
+    public float TreeScalingFactor;
+    public int MaxTreeCount;
+
     private int NextTile = 0;
 
     private Queue<GameObject> WorldTiles = new Queue<GameObject>();
@@ -31,7 +44,6 @@ public class TerrainGeneration : MonoBehaviour
         GameObject newTile = GameObject.Instantiate(Terrain);
         newTile.transform.position = nextPosition;
         newTile.SetActive(true);
-        NextTile++;
         WorldTiles.Enqueue(newTile);
         if(SpawnTrees)
             SpawnTreesOnTile(newTile);
@@ -41,15 +53,34 @@ public class TerrainGeneration : MonoBehaviour
         {
             RemoveChunk(WorldTiles.Dequeue());
         }
+        NextTile++;
     }
-
+    private void GetEnemyCountToSpawn(out int enemyCount, out float healthRatio)
+    {
+        if(NextTile < SpawnChunkCount)
+        {
+            enemyCount = 0;
+            healthRatio = 0;
+        }
+        float chunkHealth = InitialChunkHealthPool * Mathf.Pow(ChunkDifficultyScale, NextTile - SpawnChunkCount);
+        float spawnAmount = Mathf.Floor(chunkHealth / EnemyBaseHealth);
+        float consumedHealth = spawnAmount * EnemyBaseHealth;
+        float healthBoostRatio = chunkHealth / consumedHealth;
+        enemyCount = Mathf.FloorToInt(spawnAmount);
+        healthRatio = healthBoostRatio;
+        Debug.Log($"Spawning {enemyCount} with ratio {healthRatio} for chunk {NextTile}");
+    }
     private void SpawnEnemiesOnTile(GameObject tile)
     {
         Vector3 scale = tile.transform.localScale;
         Vector3 pos = tile.transform.position;
         int spawnedEnemies = 0;
+        GetEnemyCountToSpawn(out int enemiesToSpawn, out float healthRatio);
         for (int spawnAttempts = 0; spawnAttempts < 10000; spawnAttempts++)
         {
+            if(spawnedEnemies >= enemiesToSpawn)
+                break;
+
             float x = UnityEngine.Random.Range(0.00f, 1.0f);   
             float z = UnityEngine.Random.Range(0.25f, 0.75f);
             Vector3 spawnPosition = new Vector3(x, 0, z);
@@ -57,11 +88,20 @@ public class TerrainGeneration : MonoBehaviour
             if(!locationOccupied)
             {
                 var newEnemy = GameObject.Instantiate(EnemyPrefab, new Vector3(pos.x + scale.x * x, 1.0f, pos.z + scale.z * z), Quaternion.identity);
+                Health health = newEnemy.GetComponent<Health>();
+                health.health = EnemyBaseHealth * healthRatio;
                 spawnedEnemies++;
             }
-            if(spawnedEnemies >= 3)
-                break;
         }
+    }
+
+    private int GetTreeCountToSpawn()
+    {
+        float scaledTreeCount = InitialTreeCount * Mathf.Pow(TreeScalingFactor, NextTile);
+
+        // Return a random between the two for some diversity
+        int treeCount = UnityEngine.Random.Range(Mathf.FloorToInt(scaledTreeCount), Mathf.CeilToInt(scaledTreeCount));
+        return Math.Min(treeCount, MaxTreeCount);
     }
 
     private void SpawnTreesOnTile(GameObject tile)
@@ -69,6 +109,7 @@ public class TerrainGeneration : MonoBehaviour
         Vector3 scale = tile.transform.localScale;
         Vector3 pos = tile.transform.position;
         int spawnedTrees = 0;
+        int treesToSpawn = GetTreeCountToSpawn();
         for (int spawnAttempts = 0; spawnAttempts < 10000; spawnAttempts++)
         {
             float x = UnityEngine.Random.Range(0.00f, 1.0f);   
@@ -80,7 +121,7 @@ public class TerrainGeneration : MonoBehaviour
                 newTree.transform.SetParent(tile.transform);
                 spawnedTrees++;
             }
-            if(spawnedTrees >= 10)
+            if(spawnedTrees >= treesToSpawn)
                 break;
         }
     }
