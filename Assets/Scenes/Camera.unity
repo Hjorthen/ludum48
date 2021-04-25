@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 209513782}
-  damageColor: {r: 1, g: 0, b: 0, a: 0}
   animator: {fileID: 0}
 --- !u!114 &209513782
 MonoBehaviour:
@@ -2913,7 +2912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1105716759}
-  damageColor: {r: 0, g: 0, b: 0, a: 0}
   animator: {fileID: 1105716766}
 --- !u!1 &1734004491
 GameObject:
@@ -3097,7 +3095,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25380
+  m_Name: pb_Mesh17374
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
