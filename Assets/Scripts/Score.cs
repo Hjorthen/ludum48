@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     public Gradient MoodGradient;
     public Light DirectionalLight;
     private static int enemiesKilled;
+    public int scorePerEnemy;
     public float playerMaxDepth{
         private set;
         get;
@@ -22,7 +23,7 @@ public class Score : MonoBehaviour
 
     private void UpdateMoodLight()
     {
-        float ratio = Mathf.Clamp(playerMaxDepth / 100, 0, 1);
+        float ratio = Mathf.Clamp(playerMaxDepth / 800, 0, 1);
         DirectionalLight.color = MoodGradient.Evaluate(ratio);
         Camera.main.backgroundColor = MoodGradient.Evaluate(ratio);
     }
@@ -32,7 +33,7 @@ public class Score : MonoBehaviour
         if (player != null)
         {
             playerMaxDepth = Mathf.Max(player.transform.position.x, playerMaxDepth);
-            score = Mathf.FloorToInt(playerMaxDepth) + (enemiesKilled * 10);
+            score = Mathf.FloorToInt(playerMaxDepth) + (enemiesKilled * scorePerEnemy);
         }
         UpdateMoodLight(); 
 

@@ -10,7 +10,7 @@ public class GameOverListener : MonoBehaviour
 
     private void OnDestroy()
     {
-        scoreText.text = "GAME OVER\n\nSCORE: " + Mathf.FloorToInt(Score.score);
+        scoreText.text = "YOU DIED\n\nSCORE: " + Mathf.FloorToInt(Score.score);
         scorescreen.SetActive(true);
     }
 }

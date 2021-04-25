@@ -6,6 +6,6 @@ public class TriggerEnemyDeath : MonoBehaviour
 {
     private void OnDestroy()
     {
-        GameEvents.current.EnemyTriggerDeath();
+        Score.IncrementKills();
     }
 }

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Alpha1))
+        if(Input.GetKeyUp(KeyCode.Q))
         {
             if (holyHandGrenadeCooldown <= 0)
             {

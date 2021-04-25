@@ -62,6 +62,7 @@ public class TerrainGeneration : MonoBehaviour
         {
             enemyCount = 0;
             healthRatio = 0;
+            return;
         }
         float chunkHealth = InitialChunkHealthPool * Mathf.Pow(ChunkDifficultyScale, NextTile - SpawnChunkCount);
         float spawnAmount = Mathf.Floor(chunkHealth / EnemyBaseHealth);

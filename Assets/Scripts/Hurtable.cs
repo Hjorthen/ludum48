@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hurtable : MonoBehaviour
 {
     private Health health;
+    public float damagePerParticle;
 
     void Start()
     {
@@ -13,6 +14,6 @@ public class Hurtable : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        health.Damage(0.1f);
+        health.Damage(damagePerParticle);
     }
 }

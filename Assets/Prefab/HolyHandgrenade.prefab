@@ -5003,7 +5003,7 @@ MonoBehaviour:
   - {fileID: 2520108988407139507}
   - {fileID: 5423317696140535295}
   Area: {fileID: 930484861506516347}
-  Damage: 10
+  Damage: 15
 --- !u!1 &5423317695473635932
 GameObject:
   m_ObjectHideFlags: 0
