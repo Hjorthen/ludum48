@@ -7,7 +7,7 @@ public class TerrainGeneration : MonoBehaviour
 {
     public bool SpawnTrees;
     public bool SpawnEnemies;
-
+    public GameObject Backstop;
     public GameObject Terrain;
     public GameObject Player;
     public GameObject TreePrefab;
@@ -52,6 +52,7 @@ public class TerrainGeneration : MonoBehaviour
         if(WorldTiles.Count > 7)
         {
             RemoveChunk(WorldTiles.Dequeue());
+            Backstop.transform.position = WorldTiles.Peek().transform.position;
         }
         NextTile++;
     }
