@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        movementController.SetDestination(player.transform.position);
+        if(player != null)
+            movementController.SetDestination(player.transform.position);
     }
 }

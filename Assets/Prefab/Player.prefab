@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4899961213092399105}
   - component: {fileID: 4899961213092399111}
   - component: {fileID: 5706165704529447147}
+  - component: {fileID: -1954870341131128516}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flameThrower: {fileID: 9175825207584588824}
+  holyHandgrenadePrefab: {fileID: 0}
 --- !u!54 &4899961213092399111
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,6 +176,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topSpeedMultiplier: 4
   movementTarget: {fileID: 0}
+--- !u!114 &-1954870341131128516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899961213092399132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5348bd6c4a4b824478e5da4cebe090cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorescreen: {fileID: 1183654396634448582, guid: fc45d46033b54394a99766a8f9039e89, type: 3}
+  scoreText: {fileID: 0}
 --- !u!1001 &8465099080680525820
 PrefabInstance:
   m_ObjectHideFlags: 0
