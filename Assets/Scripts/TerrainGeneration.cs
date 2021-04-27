@@ -49,7 +49,7 @@ public class TerrainGeneration : MonoBehaviour
             SpawnTreesOnTile(newTile);
         if(SpawnEnemies)
             SpawnEnemiesOnTile(newTile);
-        if(WorldTiles.Count > 8)
+        if(WorldTiles.Count > 9)
         {
             RemoveChunk(WorldTiles.Dequeue());
             Backstop.transform.position = WorldTiles.Peek().transform.position;
@@ -137,7 +137,7 @@ public class TerrainGeneration : MonoBehaviour
     {
         if (Player != null)
         {
-            return Player.transform.position.x + 5 * 20 > NextTile * 20;
+            return Player.transform.position.x + 6 * 20 > NextTile * 20;
         }
 
         return false;
